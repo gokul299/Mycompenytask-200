@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        screens: {
+          xs: '320px',
+          // => @media (min-width: 320px) { ... }
+          sm: '640px',
+          // => @media (min-width: 640px) { ... }
+          md: "768px",
+          // @media(min - width: 768px) { ... } 
+          lg: "1024px",
+          // @media(min - width: 1024px) { ... }
+          xl: "1280px",
+          // @media(min - width: 1280px) { ... }
+          '2xl': "1536px"
+          //  @media(min - width: 1536px) { ... }
+        },
+        fontSize: {
+          sm: '10px',
+          base: '14px',
+          lg: '20px',
+          xl: '30px',
+          xxl: "40px",
+          '3xl': "56px",
+          '4xl': "65px",
+          '5xl': "80px"
+        },
+        extend: {
+          colors: {
+            border_color: '#adff2f',
+            card_color: '#63A91F'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div class="min-h-full">
+    <nav class="bg-black border-b-2 border-[#adff2f]">
+      <div class="mx-auto max-w-7xl px-2 lg:px-4">
+        <div class="xs:flex md:flex-none h-16 items-center justify-between w-full">
+          <div class="flex items-center justify-between w-full">
+            <div class="flex space-x-1 flex-shrink-0">
+              <img class="h-6 w-6" src="img/logo.png" alt="A">
+              <a class="text-[#adff2f]" href="#">ASTRO</a>
+            </div>
+            <div class="hidden md:block">
+              <div class="ml-10 flex items-baseline space-x-4">
+                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                <a href="#"
+                  class="text-white hover:border-b-2 hover:border-[#00ff00]  px-3 py-1 text-lg font-medium">Home</a>
+                <a href="#"
+                  class="text-white hover:border-b-2 hover:border-[#00ff00]  px-3 py-2 text-lg font-medium">Products</a>
+                <a href="#"
+                  class="text-white hover:border-b-2 hover:border-[#00ff00]  px-3 py-2 text-lg font-medium">Contact Us</a>
+                <a href="#"
+                  class="text-white hover:border-b-2 hover:border-[#00ff00]  px-3 py-2 text-lg font-medium">Reports</a>
+              </div>
+            </div>
+            <div class="hidden md:block">
+              <a class="p-2 border border-[#adff2f] rounded-md text-white" href="">
+                Contact us
+              </a>
+            </div>
+          </div>
+          <div class="flex md:hidden">
+            <button type="button"
+              class="relative inline-flex items-center justify-center rounded-md bg-black border border-border_color p-2 text-white"
+              aria-controls="mobile-menu" aria-expanded="false">
+              <span class="absolute -inset-0.5"></span>
+              <span class="sr-only">Open main menu</span>
+
+              <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white"
+                aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+
+              <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white"
+                aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu, show/hide based on menu state. -->
+      <div class="md:hidden" id="mobile-menu">
+        <div class="flex flex-col space-y-1 px-2 pb-3 pt-2 sm:px-3">
+          <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+          <a href="#" class="text-white hover:border-b-2 hover:border-[#00ff00]  px-3 py-1 text-lg font-medium">Team</a>
+          <a href="#"
+            class="text-white hover:border-b-2 hover:border-[#00ff00]  px-3 py-1 text-lg font-medium">Projects</a>
+          <a href="#"
+            class="text-white hover:border-b-2 hover:border-[#00ff00]  px-3 py-1 text-lg font-medium">Calendar</a>
+          <a href="#"
+            class="text-white hover:border-b-2 hover:border-[#00ff00]  px-3 py-1 text-lg font-medium">Reports</a>
+          <a href="#" class="text-white hover:border-b-2 hover:border-[#00ff00]  px-3 py-1 text-lg font-medium">Contact
+            us</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- home -->
+  <section class="Home flex items-center justify-center" id="Home">
+    <div>
+      <h1 class="sm:text-3xl lg:text-5xl text-center">
+        ASTRO CONSOLES
+      </h1>
+      <p class="sm:text-xl lg:text-xxl text-center">
+        "A New Prespective For Gamers"
+      </p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="flex items-center justify-center">
+    <div class="sm:block xl:grid grid-cols-12">
+      <div class="flex flex-col items-center col-span-6">
+        <img src="img/logo.png" class="sm:w-[200px] lg:w-[400px] h-fit">
+        <P style="text-align: center;font-size: 50px;padding-left: 10%;">ASTRO CORP</P>
+      </div>
+      <div class="bg-black text-center border border-[#adff2f] rounded-md p-4 col-span-6 sm:mr-4 lg:mr-12">
+        <h1 style="color: #ffff00;font-size: 20px;">
+          ABOUT US
+        </h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit illum tenetur nam, iusto necessitatibus vitae
+          exercitationem perspiciatis quia laborum repellat.
+          Fugit nulla doloribus aliquam odio quaerat sunt nostrum nihil quas?Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Nemo magni animi quo non magnam,
+          tempora veritatis doloremque facere unde impedit voluptate,fugiat quaerat quidem pariatur temporibus!
+          Inventore
+          beatae rem culpa? Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Sit illum tenetur nam, iusto necessitatibus vitae exercitationem perspiciatis
+          quia
+          laborum repellat. Fugit nulla doloribus aliquam
+          odio quaerat sunt nostrum nihil quas?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo magni animi
+          quo non magnam, tempora veritatis doloremque
+          facere unde impedit voluptate,fugiat quaerat quidem pariatur temporibus! Inventore beatae rem culpa?
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products">
+    <h2 class="xs:text-xl xl:text-3xl font-bold text-[#ffff00] bg-black pt-3">Products</h2>
+    <div class="mx-auto sm:p-4 xl:p-6 products_div">
+      <div class="mt-6 grid grid-cols-12 gap-6">
+        <div class="bg-black col-span-4 border border-[#A8FC92] rounded-md overflow-hidden">
+          <div
+            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+            <img src="img/keyboard.png" alt=""
+              class="h-full w-full object-cover object-center hover:border-b border-border_color lg:h-full lg:w-full bg-[#047F07] ">
+          </div>
+          <div class="my-2 rounded-md p-2 flex items-center justify-between bg-black">
+            <p class="mt-1 text-xl text-white">Keyboard</p>
+            <p class="text-lg font-medium text-[#ffff00]">₹3500</p>
+          </div>
+        </div>
+        <div class="bg-black col-span-4 border border-[#A8FC92] rounded-md overflow-hidden">
+          <div
+            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+            <img src="img/headset.png" alt=""
+              class="h-full w-full object-cover object-center hover:border-b border-border_color lg:h-full lg:w-full bg-[#047F07] ">
+          </div>
+          <div class="my-2 rounded-md p-2 flex items-center justify-between bg-black">
+            <p class="mt-1 text-xl text-white">Boom Head Phones</p>
+            <p class="text-lg font-medium text-[#ffff00]">₹2000</p>
+          </div>
+        </div>
+        <div class="bg-black col-span-4 border border-[#A8FC92] rounded-md overflow-hidden">
+          <div
+            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+            <img src="img/mouse dark.png" alt=""
+              class="h-full w-full object-cover object-center hover:border-b border-border_color lg:h-full lg:w-full bg-[#047F07] ">
+          </div>
+          <div class="my-2 rounded-md p-2 flex items-center justify-between bg-black">
+            <p class="mt-1 text-xl text-white">Mouse Razer</p>
+            <p class="text-lg font-medium text-[#ffff00]">₹3500</p>
+          </div>
+        </div>
+        <div class="bg-black col-span-4 border border-[#A8FC92] rounded-md overflow-hidden">
+          <div
+            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+            <img src="img/greanup.png" alt=""
+              class="h-full w-full object-cover object-center hover:border-b border-border_color lg:h-full lg:w-full bg-[#047F07] ">
+          </div>
+          <div class="my-2 rounded-md p-2 flex items-center justify-between bg-black">
+            <p class="mt-1 text-xl text-white">Gaming Full Setup PC</p>
+            <p class="text-lg font-medium text-[#ffff00]">₹55,500</p>
+          </div>
+        </div>
+        <div class="bg-black col-span-4 border border-[#A8FC92] rounded-md overflow-hidden">
+          <div
+            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+            <img src="img/cpu.png" alt=""
+              class="h-full w-full object-cover object-center hover:border-b border-border_color lg:h-full lg:w-full bg-[#047F07] ">
+          </div>
+          <div class="my-2 rounded-md p-2 flex items-center justify-between bg-black">
+            <p class="mt-1 text-xl text-white">AMD Ryzen Prosser</p>
+            <p class="text-lg font-medium text-[#ffff00]">₹10000</p>
+          </div>
+        </div>
+        <div class="bg-black col-span-4 border border-[#A8FC92] rounded-md overflow-hidden">
+          <div
+            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+            <img src="img/pad.png" alt=""
+              class="h-full w-full object-cover object-center hover:border-b border-border_color lg:h-full lg:w-full bg-[#047F07] ">
+          </div>
+          <div class="my-2 rounded-md p-2 flex items-center justify-between bg-black">
+            <p class="mt-1 text-xl text-white">Mouse Pad</p>
+            <p class="text-lg font-medium text-[#ffff00]">₹1500</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Us -->
+  <h2 class="xs:text-xl xl:text-3xl font-bold text-[#ffff00] bg-black pt-3">Contact Us</h2>
+  <section id="contact_us" class="flex items-center justify-center min-h-[60vh]">
+    <div class="grid grid-cols-12 gap-x-3 py-10">
+      <div class="col-span-5 text-center border-r-2 border-border_color space-y-4">
+        <div class="address details">
+          <div class="text-xl">Address</div>
+          <div class="text-lg">Surkhet, NP12</div>
+          <div class="text-lg">Birendranagar 06</div>
+        </div>
+        <div class="phone details">
+          <div class="text-xl">Phone</div>
+          <div class="text-lg">+0098 9893 5647</div>
+          <div class="text-lg">+0096 3434 5678</div>
+        </div>
+        <div class="email details">
+          <div class="text-xl">Email</div>
+          <div class="text-lg">codinglab@gmail.com</div>
+          <div class="text-lg">info.codinglab@gmail.com</div>
+        </div>
+      </div>
+      <div class="col-span-6 text-center">
+        <p class="text-xxl">Send us a message</p>
+        <p class="text-lg">If you have any work from me or any types of quries related to my tutorial, you can send me
+          message from
+          here. It's my pleasure to help you.</p>
+        <div class="space-y-4 mt-4">
+          <input type="text" placeholder="Enter your name"
+            class="p-2 rounded-md bg-black border border-border_color w-[70%]">
+          <input type="text" placeholder="Enter your email"
+            class="p-2 rounded-md bg-black border border-border_color w-[70%]">
+            <button type="submit" class="btn p-2 rounded-md bg-card_color w-[50%] text-white ">
+            Send
+          </button>
+          </div>
+        </div>
+      </div>
+  </section>
+  </div>
+  
+  <footer>
+    <div class="footer-content">
+      <h3>AIRTIST_</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ipsam fuga illum doloremque! Et cumque odit,
+        a consequatur aspernatur corrupti excepturi, ipsa dicta corporis molestias ratione. Magnam fugit fuga
+        consequuntur?.</p>
+      <ul class="socials">
+        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+        <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+      </ul>
+    </div>
+
+  </footer>
+</body>
+
+</html>
